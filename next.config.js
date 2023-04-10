@@ -6,7 +6,6 @@ const unoCssConfig = require("./unocss.config");
 const nextConfig = {
   reactStrictMode: true,
   webpack(config, context) {
-    console.log("unoCssConfig", unoCssConfig);
     config.plugins.push(
       UnoCSS({
         presets: [presetUno()],
