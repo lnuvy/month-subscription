@@ -18,7 +18,7 @@ const Tab = ({ title, Normal, isSelected, Selected, onClick }: Props) => {
   const TextComponent = useCallback(() => {
     const className = isSelected ? "font-semibold" : "color-icon-basic";
 
-    return <div className={`fs-13 ${className}`}>{title}</div>;
+    return <div className={`fs-12 ${className}`}>{title}</div>;
   }, [isSelected]);
 
   return (
