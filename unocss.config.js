@@ -35,7 +35,7 @@ module.exports = {
     [/^gap-(\w+)$/, ([, d]) => ({ gap: `${Number(d) / 10}rem` })],
     // color
     [/^bdc-(\w+)$/, ([, d]) => ({ "border-color": `#${d}}` })],
-    [/^bgc-(\w+)$/, ([, d]) => ({ "background-color": `#${d}` })],
+    [/^bgc-(\w+)$/, ([, d]) => ({ "background-color": `var(--${d})` })],
     [/^cl-(\w+)$/, ([, d]) => ({ color: `#${d}}` })],
     //
     [/^fs-(\d+)$/, ([, d]) => ({ "font-size": `${Number(d) / 10}rem` })],
@@ -49,14 +49,14 @@ module.exports = {
     [/^mt-(\d+)$/, ([, d]) => ({ "margin-top": `${Number(d) / 10}rem` })],
     [/^mb-(\d+)$/, ([, d]) => ({ "margin-bottom": `${Number(d) / 10}rem` })],
     [
-      /^mv-(\d+)$/,
+      /^mx-(\d+)$/,
       ([, d]) => ({
         "margin-left": `${Number(d) / 10}rem`,
         "margin-right": `${Number(d) / 10}rem`,
       }),
     ],
     [
-      /^mh-(\d+)$/,
+      /^my-(\d+)$/,
       ([, d]) => ({
         "margin-bottom": `${Number(d) / 10}rem`,
         "margin-top": `${Number(d) / 10}rem`,
@@ -69,20 +69,27 @@ module.exports = {
     [/^pt-(\d+)$/, ([, d]) => ({ "padding-top": `${Number(d) / 10}rem` })],
     [/^pb-(\d+)$/, ([, d]) => ({ "padding-bottom": `${Number(d) / 10}rem` })],
     [
-      /^pv-(\d+)$/,
+      /^px-(\d+)$/,
       ([, d]) => ({
         "padding-left": `${Number(d) / 10}rem`,
         "padding-right": `${Number(d) / 10}rem`,
       }),
     ],
     [
-      /^ph-(\d+)$/,
+      /^py-(\d+)$/,
       ([, d]) => ({
         "padding-bottom": `${Number(d) / 10}rem`,
         "padding-top": `${Number(d) / 10}rem`,
       }),
     ],
-    // border
+    [
+      /^bd-(\w+)$/,
+      // border
+      ([, d]) => ({
+        border: `1px solid ${d}`,
+      }),
+    ],
+    // border-radius
     [
       /^radius-(\d+)$/,
       ([, d]) => ({ "border-radius": `${Number(d) / 10}rem` }),

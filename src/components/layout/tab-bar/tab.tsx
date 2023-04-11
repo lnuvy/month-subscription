@@ -22,7 +22,7 @@ const Tab = ({ title, Normal, isSelected, Selected, onClick }: Props) => {
   }, [isSelected]);
 
   return (
-    <div className="w-full flex flex-col items-center gap-2" onClick={onClick}>
+    <div className="w-full flex flex-col items-center gap-5" onClick={onClick}>
       <IconComponent />
       <TextComponent />
     </div>

@@ -1,40 +1,12 @@
 import Template from "@/components/layout/template";
-import { useState } from "react";
+import Home from "@/components/pages/home";
 
-const Home = () => {
-  const [isList, setIsList] = useState(true);
-
-  return (
-    <>
-      <h1 className="fs-20">안녕</h1>
-      <h1 className="fs-20">안녕</h1>
-      <h1 className="fs-20">안녕</h1>
-      <h1 className="fs-20">안녕</h1>
-      <h1 className="fs-20">안녕</h1>
-      <h1 className="fs-20">안녕</h1>
-      <h1 className="fs-20">안녕</h1>
-      <h1 className="fs-20">안녕</h1>
-      <h1 className="fs-20">안녕</h1>
-      <h1 className="fs-20">안녕</h1>
-      <h1 className="fs-20">안녕</h1>
-      <h1 className="fs-20">안녕</h1>
-      <h1 className="fs-20">안녕</h1>
-      <h1 className="fs-20">안녕</h1>
-      <h1 className="fs-20">안녕</h1>
-      <h1 className="fs-20">안녕</h1>
-      <h1 className="fs-20">안녕</h1>
-      <h1 className="fs-20">안녕</h1>
-      <h1 className="fs-20">안녕</h1>
-      <h1 className="fs-20">안녕</h1>
-      <h1 className="fs-20">안녕</h1>
-      <h1 className="fs-20">안녕</h1>
-      <h1 className="fs-20">안녕</h1>
-    </>
-  );
+const HomePage = () => {
+  return <Home />;
 };
 
-Home.getLayout = function getLayout(page: React.ReactElement) {
+HomePage.getLayout = function getLayout(page: React.ReactElement) {
   return <Template.default>{page}</Template.default>;
 };
 
-export default Home;
+export default HomePage;
