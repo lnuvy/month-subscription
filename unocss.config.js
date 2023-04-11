@@ -18,7 +18,6 @@ module.exports = {
       line: {
         100: "var(--line-100)",
         200: "var(--line-200)",
-        // 한울 - 추가함
         300: "var(--line-300)",
       },
       icon: {
@@ -38,10 +37,10 @@ module.exports = {
     [/^bdc-(\w+)$/, ([, d]) => ({ "border-color": `#${d}}` })],
     [/^bgc-(\w+)$/, ([, d]) => ({ "background-color": `#${d}` })],
     [/^cl-(\w+)$/, ([, d]) => ({ color: `#${d}}` })],
-    // font
+    //
     [/^fs-(\d+)$/, ([, d]) => ({ "font-size": `${Number(d) / 10}rem` })],
     // width
-    [/^w-(\d+)$/, ([, d]) => ({ width: `${Number(d)}rem` })],
+    [/^w-(\d+)$/, ([, d]) => ({ width: `${fontNumber(d)}rem` })],
     [/^h-(\d+)$/, ([, d]) => ({ height: `${Number(d)}rem` })],
     // margin
     [/^m-(\d+)$/, ([, d]) => ({ margin: `${Number(d) / 10}rem` })],

@@ -1,0 +1,22 @@
+{
+  "msc page snippet": {
+    "prefix": "rafcee",
+    "body": [
+      "import Template from \"@/components/layout/template\";",
+      "",
+      "const ${1:Name} = () => {",
+      "  return (",
+      "    <div>${1:Name}</div>",
+      "  )",
+      "};",
+      "",
+      "${1:Name}.getLayout = function getLayout(page: React.ReactElement) {",
+      "  return <Template.default>{page}</Template.default>;",
+      "};",
+      "",
+      "export default ${1:Name};",
+      ""
+    ],
+    "description": "msc page snippet"
+  }
+}

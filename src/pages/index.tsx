@@ -1,12 +1,14 @@
-import TabBar from "@/components/layout/tab-bar";
+import Template from "@/components/layout/template";
 import { useState } from "react";
 
-export default function Home() {
+const Home = () => {
   const [isList, setIsList] = useState(true);
 
-  return (
-    <div className="w-screen h-screen bg-brand-primary">
-      <TabBar />
-    </div>
-  );
-}
+  return <>아ㅓㄴ녕하세요</>;
+};
+
+Home.getLayout = function getLayout(page: React.ReactElement) {
+  return <Template.default>{page}</Template.default>;
+};
+
+export default Home;
