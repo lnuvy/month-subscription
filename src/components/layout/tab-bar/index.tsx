@@ -5,6 +5,7 @@ import Tab from "./tab";
 
 const TabBar = () => {
   const { selected, onClickTab } = useTabContext();
+
   return (
     <Frame>
       {BOTTOM_TABS.map((tab) => {

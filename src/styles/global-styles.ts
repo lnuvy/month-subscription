@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, css, keyframes } from "styled-components";
 import reset from "styled-reset";
 
 const GlobalStyles = createGlobalStyle`
@@ -11,23 +11,9 @@ const GlobalStyles = createGlobalStyle`
   body {
     font-family: "NanumSquare", sans-serif;
   }
-  .normal {
-    font-weight: 400;
-  }
-  .bold {
-    font-weight: 700;
-  }
-  .bolder {
-    font-weight: 800;
-  }
-  .light {
-    font-weight: 300;
-  }
-
+  
   html,
   body {
-    position: fixed;
-    padding: 0;
     box-sizing: border-box;
 
     overflow: hidden;
@@ -38,3 +24,42 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 export default GlobalStyles;
+
+const fetchingAnimation = keyframes`
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+`;
+
+/**
+ * api fetching 동안 보여지게할 css
+ */
+export const cssFetchingAnimation = css<{ borderRadius?: string }>`
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  background-color: ${({ theme }) => theme.colors.grey200};
+  border-radius: ${({ borderRadius }) => borderRadius ?? "0"};
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0),
+      #fafafa,
+      rgba(255, 255, 255, 0)
+    );
+    transform: translateX(-100%);
+    animation: ${fetchingAnimation} 2.4s linear 0.5s infinite;
+    content: "";
+  }
+`;

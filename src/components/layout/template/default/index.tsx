@@ -4,14 +4,10 @@ import TabBar from "../../tab-bar";
 
 const DefaultTemplate = ({ children }: ChildrenProps) => {
   return (
-    <>
-      {/* page wrapper */}
-      <Frame>
-        {/* content wrapper */}
-        <ContentWrapper>{children}</ContentWrapper>
-        <TabBar />
-      </Frame>
-    </>
+    <Frame>
+      <ContentWrapper>{children}</ContentWrapper>
+      <TabBar />
+    </Frame>
   );
 };
 
