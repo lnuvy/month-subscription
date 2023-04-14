@@ -86,12 +86,12 @@
 /* color style */
 :root {
   /* brand color */
-  --brand-primary: #6977e4;
-  --brand-secondary: #8a6fd4;
+  --brand-primary: #e5dfd3;
+  --brand-secondary: #a39c90;
   --brand-gradient: linear-gradient(
     90deg,
-    rgba(105, 119, 228, 1) 0%,
-    rgba(138, 111, 212, 1) 100%
+    rgba(229, 223, 211, 1) 0%,
+    rgba(163, 156, 144, 1) 100%
   );
   /* grayscale color */
   --black: #141414;
