@@ -1,3 +1,7 @@
 {
-  "cSpell.words": ["unocss"]
+  "cSpell.words": ["unocss"],
+
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  }
 }

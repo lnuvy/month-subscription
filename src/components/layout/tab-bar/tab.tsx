@@ -1,4 +1,5 @@
-import React, { useCallback } from "react";
+import { useCallback } from "react";
+import styled from "styled-components";
 
 interface Props {
   title: string;
@@ -15,18 +16,28 @@ const Tab = ({ title, Normal, isSelected, Selected, onClick }: Props) => {
     return isSelected ? Selected : Normal;
   }, [isSelected]);
 
-  const TextComponent = useCallback(() => {
-    const className = isSelected ? "font-semibold" : "color-icon-basic";
-
-    return <div className={`fs-12 ${className}`}>{title}</div>;
-  }, [isSelected]);
-
   return (
-    <div className="w-full flex flex-col items-center gap-5" onClick={onClick}>
+    <Frame onClick={onClick}>
       <IconComponent />
-      <TextComponent />
-    </div>
+
+      <TextLabel isSelected={isSelected}>{title}</TextLabel>
+    </Frame>
   );
 };
 
 export default Tab;
+
+const Frame = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+`;
+
+const TextLabel = styled.p<{ isSelected: boolean }>`
+  font-size: 1.2rem;
+
+  font-weight: ${({ isSelected }) => (isSelected ? 600 : 400)};
+  color: ${({ theme }) => theme.colors.error};
+`;

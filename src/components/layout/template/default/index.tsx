@@ -1,20 +1,30 @@
 import { ChildrenProps } from "@/types/components";
-import React from "react";
+import styled from "styled-components";
 import TabBar from "../../tab-bar";
 
 const DefaultTemplate = ({ children }: ChildrenProps) => {
   return (
     <>
       {/* page wrapper */}
-      <div className="w-screen h-screen overflow-hidden">
+      <Frame>
         {/* content wrapper */}
-        <div className="overflow-auto" style={{ height: "calc(100vh - 75px)" }}>
-          <div className="p-16">{children}</div>
-        </div>
+        <ContentWrapper>{children}</ContentWrapper>
         <TabBar />
-      </div>
+      </Frame>
     </>
   );
 };
 
 export default DefaultTemplate;
+
+const Frame = styled.div`
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+`;
+
+const ContentWrapper = styled.div`
+  height: calc(100vh - 80px);
+  overflow: auto;
+  padding: 1.6rem;
+`;

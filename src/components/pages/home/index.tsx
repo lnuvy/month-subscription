@@ -1,4 +1,3 @@
-import React from "react";
 import EarliestPayment from "./organisms/earliest-payment";
 
 const Home = () => {

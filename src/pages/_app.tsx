@@ -1,11 +1,10 @@
-import "@/styles/globals.css";
-import "@/styles/theme.css";
-import type { AppProps } from "next/app";
-import "@unocss/reset/normalize.css";
-import "uno.css";
 import TabContextProvider from "@/context/tab-context";
-import { ReactElement } from "react";
+import ThemeContextProvider from "@/context/theme-context";
+import GlobalStyles from "@/styles/global-styles";
+import "@/styles/theme.css";
 import { NextPage } from "next";
+import type { AppProps } from "next/app";
+import { ReactElement } from "react";
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout: (page: ReactElement) => JSX.Element | JSX.Element[];
@@ -25,9 +24,12 @@ export default function App({
 
   return (
     <>
-      <TabContextProvider>
-        {getLayout(<Component {...pageProps} />)}
-      </TabContextProvider>
+      <ThemeContextProvider>
+        <GlobalStyles />
+        <TabContextProvider>
+          {getLayout(<Component {...pageProps} />)}
+        </TabContextProvider>
+      </ThemeContextProvider>
     </>
   );
 }
