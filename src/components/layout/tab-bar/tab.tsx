@@ -39,5 +39,7 @@ const TextLabel = styled.p<{ isSelected: boolean }>`
   font-size: 1.2rem;
 
   font-weight: ${({ isSelected }) => (isSelected ? 600 : 400)};
-  color: ${({ theme }) => theme.colors.error};
+
+  // TODO
+  color: ${({ theme }) => theme.colors.normal};
 `;
